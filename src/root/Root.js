@@ -1,19 +1,21 @@
 import React from 'react'
-// import { Switch, Route, Link } from 'react-router-dom';
+import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import AboutPage from '../pages/About';
-// import AdoptionPage from '../pages/AdoptionPage/AdoptionPage';
+import AdoptionPage from '../pages/AdoptionPage';
+import Confirmed from '../pages/Confirmed';
+import PeopleQueue from '../pages/PeopleQueue';
 
 
 function Root() {
   return (
-  <div className="container">
-    <AboutPage />
-  
-
-  {/* <Switch>
-    <Route exact path={"/adopt"} component={AdoptionPage} />
-  </Switch> */}
-  </div>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path={'/'} component={AboutPage} />
+        <Route exact path={'/adopt'} component={AdoptionPage} />
+        <Route exact path={'/queue'} component={PeopleQueue} />
+        <Route exact path={'/adopted'} component={Confirmed} />
+      </Switch>
+  </BrowserRouter>
   );
 }
 

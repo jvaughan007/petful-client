@@ -5,47 +5,53 @@ export default class SignIn extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: '',
+            person: '',
         }
+    }
+
+    redirect = () => {
+        return window.location.href = "/queue";
     }
 
     handleSubmit = (e) => {
         e.preventDefault();
         console.log('completed the handle submit');
-        fetch('/people', {
+        fetch('http://localhost:8000/people', {
             method: "POST",
             headers: {
                 Accept: "application/json",
                 "Content-Type": "application/json,"
             },
             body: JSON.stringify({
-                name: this.state.name
+                person: this.state.person
             }),
         })
-        .then((res) => res.json())
         .then(() => {
+            console.log('redirect reached and this the person', this.state.person);
+            this.redirect();
             
-            window.location.href = "/adopt";
-            
+        })
+        .catch((e) => {
+            console.log(e);
         })
     }
 
-    handleName = (e) => {
+    handlePerson = (e) => {
         this.setState({
-            name: e.target.value
+            person: e.target.value
         })
     }
 
     render() {
-        const { name } = this.state;
+        const { person } = this.state;
         return (
             <div className="signIn-container">
                 <div className="signIn-form">
                     <h2>Please sign in below!</h2>
                     <form onSubmit={this.handleSubmit}>
                         <div className="form-control">
-                            <label htmlFor="name">Name</label>
-                            <input required type="text" id="name" value={name} onChange={this.handleName} placeholder="i.e. - John Doe" />
+                            <label htmlFor="person">Name</label>
+                            <input required type="text" id="person" value={person} onChange={this.handlePerson} placeholder="i.e. - John Doe" />
                         </div>
                         <div className="signInFormButton">
                             <button type="submit" className="signInButton">Sign-In</button>
