@@ -39,11 +39,15 @@ class Adopt extends Component {
   adoptionPage(pet) {
     return (
       <div className='pet-card'>
-        <p>Name: {pet.name}</p>
+        <div className='imgControl'>
         <img src={pet.imageURL} alt={pet.description} />
-        <p>Breed: {pet.breed}</p>
-        <p>Gender: {pet.gender}</p>
-        <p>Story: {pet.story}</p>
+        </div>
+        <div className='petDetails'>
+          <p>Name: {pet.name}</p>
+          <p>Breed: {pet.breed}</p>
+          <p>Gender: {pet.gender}</p>
+          <p>Story: {pet.story}</p>
+        </div>
       </div>
     );
   }
@@ -72,20 +76,30 @@ class Adopt extends Component {
       <div className='pets-container'>
         <h2>Congratulations! It is your turn!</h2>
         <p>Pick your new best friend by pressing the 'Adopt' button below. You can choose a dog or a cat.</p>
+        <div className='selectContainer'>
         <form
           className='select-dog'
           onSubmit={() => this.handleClickAdopt('dog')}
         >
-          <div className='dog-card'>{this.adoptionPage(this.state.pets.dog)}</div>
-          <button className='adopt-dog'>Adopt Dog</button>
+          <div className='dog-card'>
+            <div>{this.adoptionPage(this.state.pets.dog)}</div>
+            <div className='buttonControl'>
+            <button className='adopt-dog'>Adopt Dog</button>
+            </div>
+          </div>
         </form>
         <form
           className='select-cat'
           onSubmit={() => this.handleClickAdopt('cat')}
         >
-          <div className='cat-card'>{this.adoptionPage(this.state.pets.cat)}</div>
-          <button className='adopt-cat'>Adopt Cat</button>
+          <div className='cat-card'>
+            <div>{this.adoptionPage(this.state.pets.cat)}</div>
+            <div className='buttonControl'>
+            <button className='adopt-cat'>Adopt Cat</button>
+            </div>
+          </div>
         </form>
+        </div>
       </div>
     );
   }

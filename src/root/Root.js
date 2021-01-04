@@ -4,6 +4,7 @@ import AboutPage from '../pages/About';
 import AdoptionPage from '../pages/AdoptionPage';
 import Confirmed from '../pages/Confirmed';
 import PeopleQueue from '../pages/PeopleQueue';
+import '../index.css'
 
 
 function Root() {
