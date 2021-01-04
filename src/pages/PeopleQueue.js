@@ -1,16 +1,67 @@
 import React, { Component } from 'react';
 import mockPeople from '../store';
+import styled from 'styled-components';
 
 class PeopleQueue extends Component {
    
     constructor(props) {
         super(props);
-        this.state = { peopleQueue: [], person: this.props.userName }
+        this.state = { 
+            peopleQueue: [], 
+            person: this.props.userName,
+            pets: {
+              dog: {
+                name: '',
+                age: '',
+                imgURL: '',
+                description: '',
+                breed: '',
+                gender: '',
+                story: '',
+              },
+              cat: {
+                name: '',
+                age: '',
+                imgURL: '',
+                description: '',
+                breed: '',
+                gender: '',
+                story: '',
+              },
+            },
+          }
         this.timer = null;
     }
 
     componentDidMount() {
         this.getPeopleQueue();
+        this.getAnimals();
+        
+    }
+
+    getAnimals = () => {
+      var requestOptions = {
+        method: 'GET',
+        redirect: 'follow',
+      };
+  
+      fetch(`http://localhost:8000/pets`, requestOptions)
+        .then((pets) => pets.json())
+        .then((pets) => this.setState({ pets }));
+    }
+  
+    adoptionPage(pet) {
+      return (
+        <div className='pet-card'>
+          <img src={pet.imageURL} alt={pet.description} />
+          <div className='petDetails'>
+          <p>Name: {pet.name}</p>
+          <p>Breed: {pet.breed}</p>
+          <p>Gender: {pet.gender}</p>
+          <p>Story: {pet.story}</p>
+          </div>
+        </div>
+      );
     }
 
    getPeopleQueue = () => {
@@ -22,9 +73,8 @@ class PeopleQueue extends Component {
       .then((response) => response.json())
       .then((data) => {
         this.setState({ peopleQueue: data })
-        console.log('this is the people queue', this.state.peopleQueue)
+        console.log('this is the peopleque', this.state.peopleQueue)
       })
-      .then()
       .catch((error) => console.log('error', error));
     };
 
@@ -44,16 +94,16 @@ class PeopleQueue extends Component {
   };
 
 
- removePeople = (type) => {
+ removePeople = (animal) => {
     var myHeaders = new Headers();
     myHeaders.append('Content-Type', 'application/json');
 
-    var rawData = JSON.stringify({ type: type });
+    var raw = JSON.stringify({ type: animal });
 
     var requestOptions = {
       method: 'DELETE',
       headers: myHeaders,
-      body: rawData,
+      body: raw,
     };
 
     return fetch('http://localhost:8000/pets', requestOptions);
@@ -70,6 +120,7 @@ class PeopleQueue extends Component {
             await this.removePeople('cat')
             await this.addPeople(newPerson)
             this.getPeopleQueue();
+            this.getAnimals();
             this.timer = setTimeout(() => this.asyncHandleListCycle(), 5000);
         }
     
@@ -79,21 +130,30 @@ class PeopleQueue extends Component {
         clearTimeout(this.timer);
     }
 
+    
+
   render() { 
-      
-    console.log(this.props)
+    console.log('this is the passed down prop userName', this.props.userName);        
         return (
-          <div className='queue_container'>
-            <ul className='queue'>
+          <div className='peopleQueue_container'>
+            <ul className='peopleQueue'>
               {this.state.peopleQueue && this.state.peopleQueue.map((person) => (
-                <li>{person}</li>
+                <li className='item'>{person}</li>
               ))}
             </ul>
+            <div className='queueControls'>
             <button onClick={this.asyncHandleListCycle}>
-                    Start Adding/Removing People in queue
+                    Check-In!
             </button>
-                <button onClick={this.myStopFunction}>Stop Simulation</button>
+                <button onClick={this.myStopFunction}>Hold the Line!</button>
+                </div>
+                <br />
+                <div className='petQueueControl'>
+                  <div className='dog-card'>{this.adoptionPage(this.state.pets.dog)}</div>
+                  <div className='cat-card'>{this.adoptionPage(this.state.pets.cat)}</div>
+                </div>
           </div>
+          
         );
     }
 }

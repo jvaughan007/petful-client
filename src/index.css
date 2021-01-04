@@ -1,0 +1,192 @@
+html {
+    background: aliceblue;
+}
+
+/* Landing/About Page */
+
+.aboutContainer {
+    display: block;
+    justify-content: center;
+    font-size: small;
+    text-align: center;
+}
+
+.aboutContainer h2 {
+    border-style: solid;
+    background: white;
+}
+
+.form-control {
+    margin: 10px 0;
+  }
+
+.form-control label {
+    display: flex;
+    font-size: medium;
+    font-weight: bold;
+    letter-spacing: 0.8;
+    margin-bottom: 5px;
+    justify-content: left;
+}
+
+.form-control input {
+    display: block;
+    width: 90%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background: white;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  }
+
+  /* Queue page */
+
+.peopleQueue_container {
+    display: block;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.peopleQueue {
+    display:block;
+    flex-direction: column;
+    list-style-type: none;
+    border: solid;
+    background: white;
+}
+
+.peopleQueue li {
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    width: 100%;
+    text-align: center;
+    font-weight:bold
+    
+}
+
+.petQueueControl{
+    width: 100%;
+}
+
+.dog-card, .cat-card {
+    width: 100%;
+    margin-top: 2rem;
+    border: solid;
+}
+
+img{
+    width: 80%;
+    margin-top: 1rem;
+    border-style: inset;
+}
+
+.pet-card p {
+    font-weight: bold;
+    padding-left: 1rem;
+}
+
+.queueControls {
+   display: flex;
+   justify-content: center;
+}
+
+.queueControls button {
+    margin-left: 2.5rem;
+}
+
+/* Adoption form */
+
+.pets-container h2 {
+    font-size: large;
+    text-align: center;
+}
+
+.pets-container 
+
+.imgControl {
+    display: flex;
+    justify-content: center;
+}
+
+.buttonControl {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.petDetails {
+    border: solid;
+    margin: 1rem;
+    background: white;
+    text-align: left;
+}
+
+
+
+/* confirmation page */
+
+.confirmContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: smaller;
+    text-align: center;
+    margin: 2rem;
+}
+
+.backHome {
+    margin-top: 1rem
+}
+
+.confirmOne {
+    border:solid;
+    background: white;
+    padding: .5rem;
+    margin: .5rem;
+}
+
+@media all and (min-width: 767px) {
+    .signIn-container {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .signIn-form {
+        width: 60%;
+    }
+
+    .petQueueControl{
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .dog-card, .cat-card {
+        width: 100%;
+    }
+
+    .select-dog, .select-cat {
+        display: flex;
+        flex-direction: row;
+        padding: 1.5rem;
+        
+    }
+
+    .selectContainer {
+        display: flex;
+        flex-direction: row;
+        
+    }
+
+    .confirmContainer {
+        margin: 5rem;
+    }
+}
