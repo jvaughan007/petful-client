@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { REACT_APP_API_BASE } from '../config.js'
+import { withRouter } from 'react-router';
 
 class Adopt extends Component {
   state = {
@@ -68,7 +69,7 @@ class Adopt extends Component {
 
     fetch(`${REACT_APP_API_BASE}/pets`, requestOptions)
       .then((response) => response.text())
-      .then((result) => (window.location.href = `${REACT_APP_API_BASE}/adopted`))
+      .then((result) => (this.props.history.push('/adopted')))
       .catch((error) => console.log('error', error));
   }
 
@@ -106,6 +107,6 @@ class Adopt extends Component {
   }
 }
 
-export default Adopt;
+export default withRouter(Adopt);
 
 
