@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import mockPeople from '../store';
-import styled from 'styled-components';
 import { REACT_APP_API_BASE } from '../config.js'
 
 class PeopleQueue extends Component {
