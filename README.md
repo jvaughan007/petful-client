@@ -10,32 +10,39 @@ The technologies used for this application were: React, PostgreSql, Express, and
 Upon reaching the homepage at https://petfulclientactive.vercel.app/ you can sign in by typing your name in the text input area. Click the "Sign-In" button to navigte to the
 queued line page. 
 
+### Desktop
 <img src='screenshots\signIn_desktop.png'/>
 
+### Mobile
 <img src='screenshots\signIn_mobile.png'/>
 
 ## Queue
 Once you sign in, you can click the "Check In" button to begin the queue. If for any reason you need to stop the
 queue, you can click "Hold the line" button to pause the queue.
  
+### Desktop
 <img src='screenshots\queue_desktop.png'/>
 
+### Mobile
 <img src='screenshots\queue_mobile.png'/>
  
 ## Adoption
 Once your name has reached the top of the queue, you will be redirected to a page to choose whether you want a dog or a cat. Click the adopt button for whichever pet you would like to adopt! 
 
-<img src='screenshots\queue_desktop.png'/>
+### Desktop
+<img src='screenshots\adoption_desktop.png'/>
 
-<img src='screenshots\queue_mobile.png'/>
+### Mobile
+<img src='screenshots\adoption_mobile.png'/>
 
 ## Confirm Page
 Upon adopting your new furry friend, you will be redirected to a confirmation page. Click the button to return to the home page!
 
+### Desktop
+<img src='screenshots\confirm_desktop.png'/>
 
-<img src='screenshots\addLeadForm_desktop.png'/>
-
-<img src='screenshots\dashboard_mobile.png'/>
+### Mobile
+<img src='screenshots\confrm_mobile.png'/>
 
 
 
