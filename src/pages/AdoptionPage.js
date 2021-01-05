@@ -54,7 +54,8 @@ class Adopt extends Component {
     );
   }
 
-  handleClickAdopt(type) {
+  handleClickAdopt(type, e) {
+    e.preventDefault();
     var myHeaders = new Headers();
     myHeaders.append('Content-Type', 'application/json');
 
