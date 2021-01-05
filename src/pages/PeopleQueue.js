@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import mockPeople from '../store';
 import styled from 'styled-components';
+import { REACT_APP_API_BASE } from '../config.js'
 
 class PeopleQueue extends Component {
    
@@ -45,7 +46,7 @@ class PeopleQueue extends Component {
         redirect: 'follow',
       };
   
-      fetch(`http://localhost:8000/pets`, requestOptions)
+      fetch(`${REACT_APP_API_BASE}/pets`, requestOptions)
         .then((pets) => pets.json())
         .then((pets) => this.setState({ pets }));
     }
@@ -69,7 +70,7 @@ class PeopleQueue extends Component {
       method: 'GET',
     };
 
-    fetch('http://localhost:8000/people/people_queue', requestOptions)
+    fetch(`${REACT_APP_API_BASE}/people/people_queue`, requestOptions)
       .then((response) => response.json())
       .then((data) => {
         this.setState({ peopleQueue: data })
@@ -90,7 +91,7 @@ class PeopleQueue extends Component {
       body: rawData,
     };
 
-    return fetch('http://localhost:8000/people', requestOptions);
+    return fetch(`${REACT_APP_API_BASE}/people`, requestOptions);
   };
 
 
@@ -106,7 +107,7 @@ class PeopleQueue extends Component {
       body: raw,
     };
 
-    return fetch('http://localhost:8000/pets', requestOptions);
+    return fetch(`${REACT_APP_API_BASE}/pets`, requestOptions);
   };
 
   asyncHandleListCycle = async () => {

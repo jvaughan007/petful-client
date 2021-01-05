@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { REACT_APP_API_BASE } from '../config.js'
 
 class Adopt extends Component {
   state = {
@@ -31,7 +32,7 @@ class Adopt extends Component {
       redirect: 'follow',
     };
 
-    fetch(`http://localhost:8000/pets`, requestOptions)
+    fetch(`${REACT_APP_API_BASE}/pets`, requestOptions)
       .then((pets) => pets.json())
       .then((pets) => this.setState({ pets }));
   }
@@ -65,7 +66,7 @@ class Adopt extends Component {
       redirect: 'follow',
     };
 
-    fetch('http://localhost:8000/pets', requestOptions)
+    fetch(`${REACT_APP_API_BASE}/pets`, requestOptions)
       .then((response) => response.text())
       .then((result) => (window.location.href = '/adopted'))
       .catch((error) => console.log('error', error));

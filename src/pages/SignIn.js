@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PeopleQueue from './PeopleQueue';
+import { REACT_APP_API_BASE } from '../config.js'
 
 
 
@@ -20,7 +21,7 @@ export default class SignIn extends Component {
         e.preventDefault();
         const person = { person: this.state.person }
         console.log('completed the handle submit');
-        fetch('http://localhost:8000/people/', {
+        fetch(`${REACT_APP_API_BASE}/people/`, {
             method: "POST",
             headers: {
                 
