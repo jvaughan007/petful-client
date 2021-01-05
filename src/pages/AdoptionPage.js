@@ -86,7 +86,7 @@ class Adopt extends Component {
           <div className='dog-card'>
             <div>{this.adoptionPage(this.state.pets.dog)}</div>
             <div className='buttonControl'>
-            <button className='adopt-dog'>Adopt Dog</button>
+            <button type='submit' className='adopt-dog'>Adopt Dog</button>
             </div>
           </div>
         </form>
@@ -97,7 +97,7 @@ class Adopt extends Component {
           <div className='cat-card'>
             <div>{this.adoptionPage(this.state.pets.cat)}</div>
             <div className='buttonControl'>
-            <button className='adopt-cat'>Adopt Cat</button>
+            <button type='submit' className='adopt-cat'>Adopt Cat</button>
             </div>
           </div>
         </form>
