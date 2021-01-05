@@ -68,7 +68,7 @@ class Adopt extends Component {
 
     fetch(`${REACT_APP_API_BASE}/pets`, requestOptions)
       .then((response) => response.text())
-      .then((result) => (window.location.href = '/adopted'))
+      .then((result) => (window.location.href = `${REACT_APP_API_BASE}/adopted`))
       .catch((error) => console.log('error', error));
   }
 
