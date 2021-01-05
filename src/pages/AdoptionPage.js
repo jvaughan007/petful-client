@@ -82,7 +82,7 @@ class Adopt extends Component {
         <div className='selectContainer'>
         <form
           className='select-dog'
-          onSubmit={() => this.handleClickAdopt('dog')}
+          onSubmit={(e) => this.handleClickAdopt('dog', e)}
         >
           <div className='dog-card'>
             <div>{this.adoptionPage(this.state.pets.dog)}</div>
@@ -93,7 +93,7 @@ class Adopt extends Component {
         </form>
         <form
           className='select-cat'
-          onSubmit={() => this.handleClickAdopt('cat')}
+          onSubmit={(e) => this.handleClickAdopt('cat', e)}
         >
           <div className='cat-card'>
             <div>{this.adoptionPage(this.state.pets.cat)}</div>
