@@ -189,4 +189,16 @@ img{
     .confirmContainer {
         margin: 5rem;
     }
+
+    .pets-container {
+        text-align: center;
+    }
+    
+    .select-cat, .select-dog {
+        display: contents;
+    }
+
+    .selectContainer {
+        justify-content: space-evenly;
+    }
 }
