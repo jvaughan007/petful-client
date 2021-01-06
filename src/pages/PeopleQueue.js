@@ -97,7 +97,7 @@ class PeopleQueue extends Component {
  removePeople = (animal) => {
     var myHeaders = new Headers();
     myHeaders.append('Content-Type', 'application/json');
-
+    
     var raw = JSON.stringify({ type: animal });
 
     var requestOptions = {
@@ -111,13 +111,14 @@ class PeopleQueue extends Component {
 
   asyncHandleListCycle = async () => {
       const newPerson = mockPeople[Math.floor(Math.random() *mockPeople.length)]
+      let petType = newPerson.length % 2 === 0 ? 'cat' : 'dog';
       if (this.state.peopleQueue[0] === this.props.userName) {
           // stop the timeout function
             this.myStopFunction();
             // push to the Adoption Page
             window.location.href = '/adopt';
         } else {
-            await this.removePeople('cat')
+            await this.removePeople(petType)
             await this.addPeople(newPerson)
             this.getPeopleQueue();
             this.getAnimals();
