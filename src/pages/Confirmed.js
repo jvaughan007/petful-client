@@ -63,6 +63,22 @@ class Confirmed extends Component {
       .catch((error) => console.log('error', error));
     };
 
+    adoptionPage(pet) {
+      return (
+        <div className='pet-card'>
+          <img src={pet.imageURL} alt={pet.description} />
+          <div className='petDetails'>
+          <p>Name: {pet.name}</p>
+          <p>Breed: {pet.breed}</p>
+          <p>Gender: {pet.gender}</p>
+          <p>Age: {pet.age}</p>
+          <p>Description: {pet.description}</p>
+          <p>Story: {pet.story}</p>
+          </div>
+        </div>
+      );
+    }
+
   handleHomeRedirect() {
       return window.location.href = '/';
   }
