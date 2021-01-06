@@ -121,7 +121,13 @@ class Confirmed extends Component {
           this.myStopFunction();
           // push to the Adoption Page
           window.location.href = '/adopt';
-      } else {
+      } else if (this.state.peopleQueue.length < 5) {
+        await this.addPeople(newPerson)
+          this.getPeopleQueue();
+          this.getAnimals();
+          this.timer = setTimeout(() => this.asyncHandleListCycle(), 1000);
+      } 
+      else {
           await this.removePeople(petType)
           await this.addPeople(newPerson)
           this.getPeopleQueue();
@@ -154,6 +160,11 @@ class Confirmed extends Component {
                 Click the "back to home" button to be redirected to our home page!
               </h3>
             </div>
+            <div className='backHome'>
+            <button onClick={this.handleHomeRedirect}>
+              Back to Home
+            </button>
+          </div>
           </div>
           <div className='peopleQueue_container'>
                 <ul className='peopleQueue'>
@@ -171,11 +182,7 @@ class Confirmed extends Component {
                 <div className='dog-card'>{this.adoptionPage(this.state.pets.dog)}</div>
                 <div className='cat-card'>{this.adoptionPage(this.state.pets.cat)}</div>
             </div>
-            <div className='backHome'>
-            <button onClick={this.handleHomeRedirect}>
-              Back to Home
-            </button>
-          </div>
+
         </div>
       </div>
     );
