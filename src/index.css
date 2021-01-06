@@ -16,6 +16,15 @@ html {
     background: white;
 }
 
+.aboutPic {
+    margin: auto;
+    width: 310px;
+    height: 290px;
+    background-image: url("../src/dogeLove.png");
+    background-size: cover;
+    color: black;
+}
+
 .form-control {
     margin: 10px 0;
   }

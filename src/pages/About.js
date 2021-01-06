@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SignIn from '../pages/SignIn';
-import '../index.css';
+
+
 
 export default class AboutPage extends Component {
     render () {
@@ -10,10 +11,14 @@ export default class AboutPage extends Component {
                 Thinkful Adoption Agency
             </h1>
             <h3>
-                Simply sign-in and be placed in to a queue! When it's your turn, you will be given the ption to adopt a dog or a cat. Thanks for choosing adoption!
+                Sign in below to join the queue! When you reach the front of the line, you will get a chance to choose a ct or a dog to give a loving new home to!
             </h3>
 
-            
+            <br />
+            <div className='aboutDescContainer'>
+                <div className='aboutPic' />
+            </div>
+            <br />
 
             <SignIn />
 
