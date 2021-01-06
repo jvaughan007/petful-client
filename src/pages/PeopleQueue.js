@@ -149,6 +149,8 @@ class PeopleQueue extends Component {
                 <button onClick={this.myStopFunction}>Hold the Line!</button>
                 </div>
                 <br />
+                <h2>Below are the pets up for adoption!</h2>
+                <p>When it's your turn, you will get the option to adopt!</p>
                 <div className='petQueueControl'>
                   <div className='dog-card'>{this.adoptionPage(this.state.pets.dog)}</div>
                   <div className='cat-card'>{this.adoptionPage(this.state.pets.cat)}</div>
