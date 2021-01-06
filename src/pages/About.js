@@ -10,9 +10,9 @@ export default class AboutPage extends Component {
             <h1>
                 Thinkful Adoption Agency
             </h1>
-            <h3>
+            <h2>
                 Sign in below to join the queue! When you reach the front of the line, you will get a chance to choose a cat or a dog to give a loving new home to!
-            </h3>
+            </h2>
 
             <br />
             <div className='aboutDescContainer'>

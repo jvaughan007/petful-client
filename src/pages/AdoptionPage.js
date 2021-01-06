@@ -48,6 +48,8 @@ class Adopt extends Component {
           <p>Name: {pet.name}</p>
           <p>Breed: {pet.breed}</p>
           <p>Gender: {pet.gender}</p>
+          <p>Age: {pet.age}</p>
+          <p>Description: {pet.description}</p>
           <p>Story: {pet.story}</p>
         </div>
       </div>
